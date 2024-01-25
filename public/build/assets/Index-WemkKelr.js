@@ -1,0 +1,1 @@
+import{_ as e,o,c as s}from"./app-HshajqQL.js";const c={data(){return{tab:1}},methods:{currentTab:function(t){this.tab=t}}},n={class:""};function a(t,r,_,d,i,p){return o(),s("div",n)}const u=e(c,[["render",a]]);export{u as default};
