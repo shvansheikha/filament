@@ -1,0 +1,19 @@
+{
+    "Title": "عنوان",
+    "Mobile": "موبایل",
+    "Price": "قیمت",
+    "Type": "نوع",
+    "Area": "منطقه",
+    "Part id": "قطعه",
+    "Arena": "عرصه",
+    "Built": "اعیانی",
+    "Location": "لوکیشن",
+    "Tags": "برچسب",
+    "Box number": "شماره قطعه",
+    "Description": "توضیحات",
+    "Image": "عکس",
+    "Mortgage": "رهن",
+    "Rent": "اجاره",
+    "Address": "آدرس",
+    "Setting": "تنظیمات"
+}
