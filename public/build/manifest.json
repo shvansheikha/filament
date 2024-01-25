@@ -1,0 +1,50 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-QZ7WFHpM.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/Pages/Index.vue": {
+    "file": "assets/Index-OSac9K_F.js",
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Index.vue"
+  },
+  "resources/js/Pages/Index2.vue": {
+    "file": "assets/Index2-ZYpNlf2E.js",
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Index2.vue"
+  },
+  "resources/js/Pages/Tab.vue": {
+    "file": "assets/Tab-HoIHbnnb.js",
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Tab.vue"
+  },
+  "resources/js/Pages/Tabs.vue": {
+    "file": "assets/Tabs-THYtHJfF.js",
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Tabs.vue"
+  },
+  "resources/js/app.js": {
+    "dynamicImports": [
+      "resources/js/Pages/Index.vue",
+      "resources/js/Pages/Index2.vue",
+      "resources/js/Pages/Tab.vue",
+      "resources/js/Pages/Tabs.vue"
+    ],
+    "file": "assets/app-ipiP95hW.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
