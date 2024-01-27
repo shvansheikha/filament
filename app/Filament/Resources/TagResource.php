@@ -4,7 +4,6 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\TagResource\Pages;
 use App\Models\Tag;
-use Filament\Forms;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -18,6 +17,16 @@ class TagResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-tag';
 
     protected static ?string $navigationGroup = 'Setting';
+
+    public static function getModelLabel(): string
+    {
+        return __('tag');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('tag');
+    }
 
     public static function form(Form $form): Form
     {
@@ -45,13 +54,6 @@ class TagResource extends Resource
             ])
             ->modifyQueryUsing(fn($query) => $query->where('user_id', auth()->id()))
             ->defaultSort('id', 'desc');
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
     }
 
     public static function getPages(): array

@@ -17,6 +17,7 @@ use Filament\Resources\Resource;
 use Filament\Support\RawJs;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\Filter;
@@ -28,6 +29,16 @@ class BoxResource extends Resource
     protected static ?string $model = Box::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-archive-box';
+
+    public static function getModelLabel(): string
+    {
+        return __('box');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('boxes');
+    }
 
     public static function form(Form $form): Form
     {
@@ -141,6 +152,8 @@ class BoxResource extends Resource
                     ->money()
                     ->sortable(),
 
+                ToggleColumn::make('is_active'),
+
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -194,7 +207,12 @@ class BoxResource extends Resource
                                 $to = str()->replace(',', '', $to);
                                 $query->where('price', '<=', $to);
                             });
-                    })
+                    }),
+
+                Filter::make('is_active')
+                    ->default()
+                    ->toggle()
+                    ->query(fn (Builder $query): Builder => $query->where('is_active', true))
 
             ], layout: FiltersLayout::AboveContentCollapsible)
             ->filtersFormColumns(3)

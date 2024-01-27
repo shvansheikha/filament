@@ -19,6 +19,16 @@ class AreaResource extends Resource
 
     protected static ?string $navigationGroup = 'Setting';
 
+    public static function getModelLabel(): string
+    {
+        return __('area');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('areas');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -47,13 +57,6 @@ class AreaResource extends Resource
             ])
             ->modifyQueryUsing(fn ($query) => $query->where('user_id', auth()->id()))
             ->defaultSort('id', 'desc');
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
     }
 
     public static function getPages(): array

@@ -19,6 +19,16 @@ class TypeResource extends Resource
 
     protected static ?string $navigationGroup = 'Setting';
 
+    public static function getModelLabel(): string
+    {
+        return __('type');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('types');
+    }
+
     public static function form(Form $form): Form
     {
         return $form->schema([
