@@ -14,6 +14,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Support\RawJs;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\Filter;
@@ -41,6 +42,9 @@ class RentResource extends Resource
         return $form
             ->schema([
                 TextInput::make('title')
+                    ->maxLength(255),
+
+                TextInput::make('name')
                     ->maxLength(255),
 
                 Select::make('type_id')
@@ -116,13 +120,13 @@ class RentResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('mobile')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('price')
-                    ->money()
-                    ->sortable(),
+                TextColumn::make('title')->searchable(),
+
+                TextColumn::make('name')->searchable(),
+
+                TextColumn::make('mobile')->searchable(),
+
+                TextColumn::make('price')->money()->sortable(),
 
                 ToggleColumn::make('is_active'),
 
@@ -130,6 +134,7 @@ class RentResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()

@@ -48,6 +48,10 @@ class BoxResource extends Resource
                     ->translateLabel()
                     ->maxLength(255),
 
+                TextInput::make('name')
+                    ->translateLabel()
+                    ->maxLength(255),
+
                 Select::make('type_id')
                     ->relationship('type', 'title')
                     ->searchable()
@@ -146,7 +150,8 @@ class BoxResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title')->translateLabel()->searchable(),
+                TextColumn::make('title')->searchable(),
+                TextColumn::make('name')->searchable(),
                 TextColumn::make('mobile'),
                 TextColumn::make('price')
                     ->money()
